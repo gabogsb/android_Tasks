@@ -17,14 +17,6 @@ class PersonRepository(val context: Context) {
 
     private val remote = RetrofitClient.getService(PersonService::class.java)
 
-    /*
-    onFailure - String
-    onResponse / 200 - PersonModel
-    onResponse / 200 - PriotityModel
-    onResponse / 200 - TaskModel
-    onResponse / 404 - ErrorBody - String
-    * */
-
     fun login(email: String, password: String, listener: APIListener<PersonModel>) {
         val call = remote.login(email, password)
         call.enqueue(object : Callback<PersonModel> {
