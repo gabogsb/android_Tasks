@@ -55,7 +55,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     fun verifyLoggedUser() {
 
         val token = securityPreferences.get(TaskConstants.SHARED.TOKEN_KEY)
-        val person = securityPreferences.get(TaskConstants.SHARED.TOKEN_KEY)
+        val person = securityPreferences.get(TaskConstants.SHARED.PERSON_KEY)
 
         RetrofitClient.addHeaders(token, person)
 
